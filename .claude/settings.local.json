@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npx create-vite@latest *)",
+      "Bash(cp -r /Users/taylor566/Desktop/portfilio_副本/temp-project/* /Users/taylor566/Desktop/portfilio_副本/)",
+      "Bash(cp /Users/taylor566/Desktop/portfilio_副本/temp-project/.gitignore /Users/taylor566/Desktop/portfilio_副本/)",
+      "Bash(npm install *)",
+      "Bash(npx vite *)",
+      "Bash(md5 \"/Users/taylor566/Desktop/portfilio/public/images/Rectangle_40443.81459862.png\")",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit: $?\")"
+    ]
+  }
+}
