@@ -35,9 +35,9 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="ability" className="relative z-10 bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
+    <section id="ability" className="relative z-10 rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
       <h2
-        className="text-[#0C0C0C] font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
+        className="hero-heading font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
         style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
       >
         Ability
@@ -50,25 +50,25 @@ export default function ServicesSection() {
               className="flex items-start gap-6 sm:gap-10 md:gap-14 py-8 sm:py-10 md:py-12"
               style={{
                 borderBottom:
-                  i < services.length - 1 ? '1px solid rgba(12, 12, 12, 0.15)' : 'none',
+                  i < services.length - 1 ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
               }}
             >
               <span
-                className="text-[#0C0C0C] font-black leading-none flex-shrink-0"
+                className="text-[#D7E2EA] font-black leading-none flex-shrink-0"
                 style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
               >
                 {service.number}
               </span>
               <div className="flex flex-col gap-2 sm:gap-3 pt-2 sm:pt-3">
                 <h3
-                  className="font-medium uppercase text-[#0C0C0C]"
+                  className="font-medium uppercase text-[#D7E2EA]"
                   style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}
                 >
                   {service.name}
                 </h3>
                 <p
-                  className="font-light leading-relaxed max-w-2xl text-[#0C0C0C]"
-                  style={{ fontSize: 'clamp(0.85rem, 1.6vw, 1.25rem)', opacity: 0.6 }}
+                  className="font-light leading-relaxed max-w-2xl text-[#D7E2EA]"
+                  style={{ fontSize: 'clamp(0.85rem, 1.6vw, 1.25rem)', opacity: 0.5 }}
                 >
                   {service.description}
                 </p>

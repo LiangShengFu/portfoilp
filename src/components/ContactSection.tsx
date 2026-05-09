@@ -2,14 +2,9 @@ import FadeIn from './FadeIn';
 
 export default function ContactSection() {
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       className="relative z-10 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
-      style={{
-        background: 'rgba(255, 255, 255, 0.03)',
-        backdropFilter: 'blur(20px) saturate(150%)',
-        WebkitBackdropFilter: 'blur(20px) saturate(150%)'
-      }}
     >
       <FadeIn delay={0} y={40}>
         <h2

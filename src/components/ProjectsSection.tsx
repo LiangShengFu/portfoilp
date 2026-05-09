@@ -24,15 +24,9 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       className="relative z-10 -mt-10 sm:-mt-12 md:-mt-14 rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] pb-10 sm:pb-12 md:pb-16"
-      style={{
-        background: 'rgba(255, 255, 255, 0.03)',
-        backdropFilter: 'blur(20px) saturate(150%)',
-        WebkitBackdropFilter: 'blur(20px) saturate(150%)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)'
-      }}
     >
       <FadeIn delay={0} y={40}>
         <h2
