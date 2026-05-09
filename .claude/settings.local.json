@@ -9,7 +9,14 @@
       "Bash(npx vite *)",
       "Bash(md5 \"/Users/taylor566/Desktop/portfilio/public/images/Rectangle_40443.81459862.png\")",
       "Bash(npx tsc *)",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "Bash(npx shadcn@latest *)",
+      "Bash(yes)",
+      "Bash(curl -s \"https://reactbits.dev/r/Silk-JS-CSS.json\")",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(npm ls *)",
+      "Bash(lsof -ti:5173,5174,5175,5176)",
+      "Bash(xargs kill)"
     ]
   }
 }

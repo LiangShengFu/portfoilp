@@ -54,7 +54,7 @@ export default function MarqueeSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-24 sm:pt-32 md:pt-40 pb-10" style={{ backgroundColor: '#0C0C0C' }}>
+    <section ref={sectionRef} className="relative z-10 pt-24 sm:pt-32 md:pt-40 pb-10 bg-transparent">
       <div className="flex flex-col gap-3 overflow-hidden">
         <div ref={row1Ref} className="flex gap-3" style={{ willChange: 'transform' }}>
           {[...ROW_1, ...ROW_1, ...ROW_1].map((src, i) => (
