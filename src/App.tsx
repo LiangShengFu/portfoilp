@@ -1,5 +1,5 @@
 import HeroSection from './components/HeroSection';
-import MarqueeSection from './components/MarqueeSection';
+import DomeGallery from './components/DomeGallery';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import ProjectsSection from './components/ProjectsSection';
@@ -31,7 +31,7 @@ export default function App() {
         COLOR_UPDATE_SPEED={10}
       />
       <HeroSection />
-      <MarqueeSection />
+      <DomeGallery />
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
