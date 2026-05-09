@@ -3,26 +3,24 @@ import { useGesture } from '@use-gesture/react';
 import './DomeGallery.css';
 
 const GALLERY_IMAGES = [
-  '/images/hero-space-voyage-preview-eECLH3Yc.gif',
-  '/images/hero-codenest-preview-Cgppc2qV.gif',
-  '/images/hero-vex-ventures-preview-BczMFIiw.gif',
-  '/images/hero-stellar-ai-v2-preview-DjvxjG3C.gif',
-  '/images/hero-asme-preview-B_nGDnTP.gif',
-  '/images/hero-transform-data-preview-Cx5OU29N.gif',
-  '/images/hero-vitara-preview-Cjz2QYyU.gif',
-  '/images/hero-terra-preview-BFjrCr7T.gif',
-  '/images/hero-skyelite-preview-DHaZIgUv.gif',
-  '/images/hero-aethera-preview-DknSlcTa.gif',
-  '/images/hero-designpro-preview-D8c5_een.gif',
-  '/images/hero-stellar-ai-preview-D3HL6bw1.gif',
-  '/images/hero-xportfolio-preview-D4A8maiC.gif',
-  '/images/hero-orbit-web3-preview-BXt4OttD.gif',
-  '/images/hero-nexora-preview-cx5HmUgo.gif',
-  '/images/hero-evr-ventures-preview-DZxeVFEX.gif',
-  '/images/hero-planet-orbit-preview-DWAP8Z1P.gif',
-  '/images/hero-new-era-preview-CocuDUm9.gif',
-  '/images/hero-wealth-preview-B70idl_u.gif',
-  '/images/hero-luminex-preview-CxOP7ce6.gif',
+  '/images/1-1.png',
+  '/images/1-2.png',
+  '/images/1-3.png',
+  '/images/2-1.png',
+  '/images/2-2.png',
+  '/images/2-3.png',
+  '/images/3-1.png',
+  '/images/3-2.png',
+  '/images/3-3.png',
+  '/images/1.png',
+  '/images/22.png',
+  '/images/222.png',
+  '/images/333.png',
+  '/images/Rectangle_40443.81459862.png',
+  '/images/Group_134-1.2e04f3ce.png',
+  '/images/moon_icon.11395d36.png',
+  '/images/lego_icon-1.703bb594.png',
+  '/images/p59_1.4659672e.png',
 ];
 
 const DEFAULTS = {
@@ -160,10 +158,26 @@ export default function DomeGallery({
     }
   };
 
+  const pendingTransformRef = useRef(false);
+  const pendingValuesRef = useRef({ x: 0, y: 0 });
+
+  const scheduleTransform = useCallback((x, y) => {
+    pendingValuesRef.current = { x, y };
+    if (!pendingTransformRef.current) {
+      pendingTransformRef.current = true;
+      requestAnimationFrame(() => {
+        pendingTransformRef.current = false;
+        applyTransform(pendingValuesRef.current.x, pendingValuesRef.current.y);
+      });
+    }
+  }, []);
+
   // ── ResizeObserver for radius / layout ──────────────────────────
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
+    let pending = false;
+    let latest = null;
     const ro = new ResizeObserver((entries) => {
       const cr = entries[0].contentRect;
       const w = Math.max(1, cr.width),
@@ -192,15 +206,22 @@ export default function DomeGallery({
       const heightGuard = h * 1.35;
       radius = Math.min(radius, heightGuard);
       radius = clamp(radius, minRadius, maxRadius);
-
       const viewerPad = Math.max(8, Math.round(minDim * padFactor));
-      root.style.setProperty('--radius', `${Math.round(radius)}px`);
-      root.style.setProperty('--viewer-pad', `${viewerPad}px`);
-      root.style.setProperty('--overlay-blur-color', overlayBlurColor);
-      root.style.setProperty('--tile-radius', imageBorderRadius);
-      root.style.setProperty('--enlarge-radius', openedImageBorderRadius);
-      root.style.setProperty('--image-filter', grayscale ? 'grayscale(1)' : 'none');
-      applyTransform(rotationRef.current.x, rotationRef.current.y);
+      latest = { radius: Math.round(radius), viewerPad };
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(() => {
+          pending = false;
+          if (!latest) return;
+          root.style.setProperty('--radius', `${latest.radius}px`);
+          root.style.setProperty('--viewer-pad', `${latest.viewerPad}px`);
+          root.style.setProperty('--overlay-blur-color', overlayBlurColor);
+          root.style.setProperty('--tile-radius', imageBorderRadius);
+          root.style.setProperty('--enlarge-radius', openedImageBorderRadius);
+          root.style.setProperty('--image-filter', grayscale ? 'grayscale(1)' : 'none');
+          applyTransform(rotationRef.current.x, rotationRef.current.y);
+        });
+      }
     });
     ro.observe(root);
     return () => ro.disconnect();
@@ -280,7 +301,7 @@ export default function DomeGallery({
         const nextY = wrapAngleSigned(startRotRef.current.y + dxTotal / dragSensitivity);
         if (rotationRef.current.x !== nextX || rotationRef.current.y !== nextY) {
           rotationRef.current = { x: nextX, y: nextY };
-          applyTransform(nextX, nextY);
+          scheduleTransform(nextX, nextY);
         }
         if (last) {
           draggingRef.current = false;
@@ -348,6 +369,7 @@ export default function DomeGallery({
       const originalImg = overlay.querySelector('img');
       if (originalImg) {
         const img = originalImg.cloneNode();
+        img.decoding = 'async';
         img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
         animatingOverlay.appendChild(img);
       }
@@ -463,6 +485,7 @@ export default function DomeGallery({
       const rawSrc = parent.dataset.src || el.querySelector('img')?.src || '';
       const img = document.createElement('img');
       img.src = rawSrc;
+      img.decoding = 'async';
       overlay.appendChild(img);
       viewerRef.current.appendChild(overlay);
       const tx0 = tileR.left - frameR.left;
@@ -598,7 +621,7 @@ export default function DomeGallery({
                     onClick={onTileClick}
                     onPointerUp={onTilePointerUp}
                   >
-                    <img src={it.src} draggable={false} alt={it.alt} />
+                    <img src={it.src} draggable={false} alt={it.alt} loading="lazy" decoding="async" />
                   </div>
                 </div>
               ))}
