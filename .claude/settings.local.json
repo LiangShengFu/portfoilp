@@ -16,7 +16,11 @@
       "Bash(curl -s http://localhost:5173)",
       "Bash(npm ls *)",
       "Bash(lsof -ti:5173,5174,5175,5176)",
-      "Bash(xargs kill)"
+      "Bash(xargs kill)",
+      "Bash(gh repo *)",
+      "WebFetch(domain:github.com)",
+      "Bash(node *)",
+      "Bash(npx skills *)"
     ]
   }
 }

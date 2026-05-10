@@ -5,7 +5,7 @@ import Magnet from './Magnet';
 
 export default function HeroSection() {
   return (
-    <section className="h-screen flex flex-col overflow-y-visible relative" style={{ overflowX: 'clip' }}>
+    <section id="hero" className="h-screen flex flex-col overflow-y-visible relative" style={{ overflowX: 'clip' }}>
       <div className="flex flex-col flex-1 px-5 sm:px-8 md:px-10 relative z-0">
         <FadeIn delay={0} y={-20}>
           <Navbar />

@@ -6,6 +6,7 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Silk from './components/Silk';
 import SplashCursor from './components/SplashCursor';
+import ScrollAnimations from './components/ScrollAnimations';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         SPLAT_FORCE={6000}
         COLOR_UPDATE_SPEED={10}
       />
+      <ScrollAnimations />
       <HeroSection />
       <DomeGallery />
       <AboutSection />

@@ -571,7 +571,7 @@ export default function DomeGallery({
   }, []);
 
   return (
-    <section className="relative z-10" style={{ width: '100%', height: '100vh' }}>
+    <section id="journey" className="relative z-10" style={{ width: '100%', height: '100vh' }}>
       {/* Journey title */}
       <h2
         className="hero-heading font-black uppercase leading-none tracking-tight text-center absolute top-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none"

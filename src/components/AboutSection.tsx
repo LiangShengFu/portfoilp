@@ -1,6 +1,7 @@
 import ContactButton from './ContactButton';
 import FadeIn from './FadeIn';
 import AnimatedText from './AnimatedText';
+import ElectricBorder from './ElectricBorder';
 
 const bioText =
   "Computer Science junior focused on building impactful AI products. I turn cutting-edge models into scalable user value through structured thinking, fast execution, and strong technical intuition. Driven by 0→1 ownership and product judgment, I aim to create intelligent systems that define real-world impact at scale.";
@@ -48,20 +49,26 @@ export default function AboutSection() {
 
           <FadeIn delay={0.4} y={20}>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="/resume.pdf"
-                download
-                className="inline-flex items-center justify-center rounded-full px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-white font-medium uppercase tracking-widest text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white/10 active:scale-95 whitespace-nowrap"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                }}
+              <ElectricBorder
+                color="#B497CF"
+                speed={1}
+                chaos={0.04}
+                borderRadius={24}
               >
-                Download Resume
-              </a>
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="inline-flex items-center justify-center rounded-full px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-white font-medium uppercase tracking-widest text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white/10 active:scale-95 whitespace-nowrap"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  }}
+                >
+                  Download Resume
+                </a>
+              </ElectricBorder>
               <ContactButton href="#contact" />
             </div>
           </FadeIn>
