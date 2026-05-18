@@ -3,17 +3,31 @@ import ProjectCard from './ProjectCard';
 
 const BASE = import.meta.env.BASE_URL;
 
+const projectImages = [
+  `${BASE}images/project-top.jpg`,
+  `${BASE}images/project-bottom.jpg`,
+  `${BASE}images/project-right.jpg`,
+] as [string, string, string];
+
 const projects = [
   {
     number: '01',
-    category: 'Client',
+    category: 'Personal',
     name: 'Terrabis',
-    images: [
-      `${BASE}images/project-top.jpg`,
-      `${BASE}images/project-bottom.jpg`,
-      `${BASE}images/project-right.jpg`,
-    ] as [string, string, string],
+    images: projectImages,
     liveUrl: 'https://github.com/Yukun-Zheng/Terrabis.git',
+  },
+  {
+    number: '02',
+    category: 'Client',
+    name: 'Project2',
+    images: projectImages,
+  },
+  {
+    number: '03',
+    category: 'Client',
+    name: 'Project3',
+    images: projectImages,
   },
 ];
 
