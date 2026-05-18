@@ -7,20 +7,13 @@ const projects = [
   {
     number: '01',
     category: 'Client',
-    name: 'Nextlevel Studio',
-    images: [`${BASE}images/1-1.png`, `${BASE}images/1-2.png`, `${BASE}images/1-3.png`] as [string, string, string],
-  },
-  {
-    number: '02',
-    category: 'Personal',
-    name: 'Aura Brand Identity',
-    images: [`${BASE}images/2-1.png`, `${BASE}images/2-2.png`, `${BASE}images/2-3.png`] as [string, string, string],
-  },
-  {
-    number: '03',
-    category: 'Client',
-    name: 'Solaris Digital',
-    images: [`${BASE}images/3-1.png`, `${BASE}images/3-2.png`, `${BASE}images/3-3.png`] as [string, string, string],
+    name: 'Terrabis',
+    images: [
+      `${BASE}images/project-top.jpg`,
+      `${BASE}images/project-bottom.jpg`,
+      `${BASE}images/project-right.jpg`,
+    ] as [string, string, string],
+    liveUrl: 'https://github.com/Yukun-Zheng/Terrabis.git',
   },
 ];
 
@@ -49,6 +42,7 @@ export default function ProjectsSection() {
             category={project.category}
             name={project.name}
             images={project.images}
+            liveUrl={project.liveUrl}
           />
         ))}
       </div>

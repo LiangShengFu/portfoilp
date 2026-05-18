@@ -10,6 +10,7 @@ interface ProjectCardProps {
   category: string;
   name: string;
   images: [string, string, string]; // [col1_top, col1_bottom, col2]
+  liveUrl?: string;
 }
 
 export default function ProjectCard({
@@ -19,6 +20,7 @@ export default function ProjectCard({
   category,
   name,
   images,
+  liveUrl,
 }: ProjectCardProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -57,7 +59,7 @@ export default function ProjectCard({
                 </h3>
               </div>
             </div>
-            <LiveProjectButton />
+            <LiveProjectButton href={liveUrl} />
           </div>
 
           {/* Bottom row: 2-column image grid */}
