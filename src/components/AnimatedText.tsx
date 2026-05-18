@@ -5,7 +5,7 @@ interface AnimatedTextProps {
   text: string;
   className?: string;
   style?: React.CSSProperties;
-  scrollOffset?: [string, string];
+  scrollOffset?: [string, string] | any;
 }
 
 export default function AnimatedText({
