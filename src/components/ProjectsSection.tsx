@@ -21,13 +21,21 @@ const projects = [
     number: '02',
     category: 'Client',
     name: 'Project2',
-    images: projectImages,
+    images: [
+      `${BASE}images/2-1.png`,
+      `${BASE}images/2-2.png`,
+      `${BASE}images/2-3.png`,
+    ] as [string, string, string],
   },
   {
     number: '03',
     category: 'Client',
     name: 'Project3',
-    images: projectImages,
+    images: [
+      `${BASE}images/3-1.png`,
+      `${BASE}images/3-2.png`,
+      `${BASE}images/3-3.png`,
+    ] as [string, string, string],
   },
 ];
 
