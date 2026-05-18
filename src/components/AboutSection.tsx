@@ -11,22 +11,22 @@ export default function AboutSection() {
     <section id="about" className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden">
       {/* Top-left: Moon */}
       <FadeIn delay={0.1} x={-80} y={0} duration={0.9} className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%] w-[120px] sm:w-[160px] md:w-[210px]">
-        <img src="/images/moon_icon.11395d36.png" alt="" className="w-full h-auto" />
+        <img src={`${import.meta.env.BASE_URL}images/moon_icon.11395d36.png`} alt="" className="w-full h-auto" />
       </FadeIn>
 
       {/* Bottom-left: 3D object */}
       <FadeIn delay={0.25} x={-80} y={0} duration={0.9} className="absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%] w-[100px] sm:w-[140px] md:w-[180px]">
-        <img src="/images/p59_1.4659672e.png" alt="" className="w-full h-auto" />
+        <img src={`${import.meta.env.BASE_URL}images/p59_1.4659672e.png`} alt="" className="w-full h-auto" />
       </FadeIn>
 
       {/* Top-right: Lego */}
       <FadeIn delay={0.15} x={80} y={0} duration={0.9} className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] w-[120px] sm:w-[160px] md:w-[210px]">
-        <img src="/images/lego_icon-1.703bb594.png" alt="" className="w-full h-auto" />
+        <img src={`${import.meta.env.BASE_URL}images/lego_icon-1.703bb594.png`} alt="" className="w-full h-auto" />
       </FadeIn>
 
       {/* Bottom-right: 3D group */}
       <FadeIn delay={0.3} x={80} y={0} duration={0.9} className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] w-[130px] sm:w-[170px] md:w-[220px]">
-        <img src="/images/Group_134-1.2e04f3ce.png" alt="" className="w-full h-auto" />
+        <img src={`${import.meta.env.BASE_URL}images/Group_134-1.2e04f3ce.png`} alt="" className="w-full h-auto" />
       </FadeIn>
 
       <FadeIn delay={0} y={40}>
@@ -56,7 +56,7 @@ export default function AboutSection() {
                 borderRadius={24}
               >
                 <a
-                  href="/resume.pdf"
+                  href={`${import.meta.env.BASE_URL}resume.pdf`}
                   download
                   className="inline-flex items-center justify-center rounded-full px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-white font-medium uppercase tracking-widest text-xs sm:text-sm md:text-base transition-all duration-300 hover:bg-white/10 active:scale-95 whitespace-nowrap"
                   style={{

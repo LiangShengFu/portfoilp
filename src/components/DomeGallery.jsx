@@ -2,25 +2,27 @@ import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 import './DomeGallery.css';
 
+const BASE = import.meta.env.BASE_URL;
+
 const GALLERY_IMAGES = [
-  '/images/1-1.png',
-  '/images/1-2.png',
-  '/images/1-3.png',
-  '/images/2-1.png',
-  '/images/2-2.png',
-  '/images/2-3.png',
-  '/images/3-1.png',
-  '/images/3-2.png',
-  '/images/3-3.png',
-  '/images/1.png',
-  '/images/22.png',
-  '/images/222.png',
-  '/images/333.png',
-  '/images/Rectangle_40443.81459862.png',
-  '/images/Group_134-1.2e04f3ce.png',
-  '/images/moon_icon.11395d36.png',
-  '/images/lego_icon-1.703bb594.png',
-  '/images/p59_1.4659672e.png',
+  `${BASE}images/1-1.png`,
+  `${BASE}images/1-2.png`,
+  `${BASE}images/1-3.png`,
+  `${BASE}images/2-1.png`,
+  `${BASE}images/2-2.png`,
+  `${BASE}images/2-3.png`,
+  `${BASE}images/3-1.png`,
+  `${BASE}images/3-2.png`,
+  `${BASE}images/3-3.png`,
+  `${BASE}images/1.png`,
+  `${BASE}images/22.png`,
+  `${BASE}images/222.png`,
+  `${BASE}images/333.png`,
+  `${BASE}images/Rectangle_40443.81459862.png`,
+  `${BASE}images/Group_134-1.2e04f3ce.png`,
+  `${BASE}images/moon_icon.11395d36.png`,
+  `${BASE}images/lego_icon-1.703bb594.png`,
+  `${BASE}images/p59_1.4659672e.png`,
 ];
 
 const DEFAULTS = {

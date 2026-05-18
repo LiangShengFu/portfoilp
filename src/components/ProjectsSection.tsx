@@ -1,24 +1,26 @@
 import FadeIn from './FadeIn';
 import ProjectCard from './ProjectCard';
 
+const BASE = import.meta.env.BASE_URL;
+
 const projects = [
   {
     number: '01',
     category: 'Client',
     name: 'Nextlevel Studio',
-    images: ['/images/1-1.png', '/images/1-2.png', '/images/1-3.png'] as [string, string, string],
+    images: [`${BASE}images/1-1.png`, `${BASE}images/1-2.png`, `${BASE}images/1-3.png`] as [string, string, string],
   },
   {
     number: '02',
     category: 'Personal',
     name: 'Aura Brand Identity',
-    images: ['/images/2-1.png', '/images/2-2.png', '/images/2-3.png'] as [string, string, string],
+    images: [`${BASE}images/2-1.png`, `${BASE}images/2-2.png`, `${BASE}images/2-3.png`] as [string, string, string],
   },
   {
     number: '03',
     category: 'Client',
     name: 'Solaris Digital',
-    images: ['/images/3-1.png', '/images/3-2.png', '/images/3-3.png'] as [string, string, string],
+    images: [`${BASE}images/3-1.png`, `${BASE}images/3-2.png`, `${BASE}images/3-3.png`] as [string, string, string],
   },
 ];
 

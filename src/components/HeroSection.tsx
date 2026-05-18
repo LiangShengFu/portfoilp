@@ -44,7 +44,7 @@ export default function HeroSection() {
       >
         <FadeIn delay={0.6} y={30}>
           <img
-            src="/images/Rectangle_40443.81459862.png"
+            src={`${import.meta.env.BASE_URL}images/Rectangle_40443.81459862.png`}
             alt="Hero portrait"
             className="w-full h-auto object-contain"
           />
