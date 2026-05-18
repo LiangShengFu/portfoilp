@@ -2,34 +2,28 @@ import FadeIn from './FadeIn';
 
 const services = [
   {
-    number: '01',
-    name: '3D Modeling',
-    description:
-      'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
-  },
-  {
     number: '02',
-    name: 'Rendering',
+    name: 'Data Visualization & Interactive Design',
     description:
-      'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
+      'Design innovative visualization logic with multi-layer overlays, metric comparison, and interactive analysis — empowering users to interpret complex data and drive data-informed decisions.',
   },
   {
     number: '03',
-    name: 'Motion Design',
+    name: 'Product Feature Planning & Prototyping',
     description:
-      'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
+      'Lead feature planning for AI products through PRD writing, user needs analysis, and prototyping to design product workflows including prompt engineering and agent orchestration.',
   },
   {
     number: '04',
-    name: 'Branding',
+    name: 'Technical Tools & Efficiency',
     description:
-      'Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.',
+      'Proficient in AI coding tools like Cursor and ChatGPT to accelerate frontend framework setup, data processing logic, API design, and overall development velocity while reducing costs.',
   },
   {
     number: '05',
-    name: 'Web Design',
+    name: 'Cross-functional Collaboration & Delivery',
     description:
-      'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+      'Coordinate seamless frontend-backend integration, drive AI tool adoption across the development pipeline, and ensure successful product launches with optimized user experience.',
   },
 ];
 
